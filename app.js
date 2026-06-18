@@ -30,7 +30,7 @@ function crearCard(presidente) {
   const col = document.createElement("div");
   col.className = "col";
 
-  const imagenURL = presidente.foto || "https://via.placeholder.com/300x300?text=Sin+imagen";
+  const imagenURL = presidente.imagen || "https://via.placeholder.com/300x300?text=Sin+imagen";
 
   col.innerHTML = `
     <div class="card pres-card h-100">
@@ -52,11 +52,11 @@ function crearCard(presidente) {
         <div class="card-body">
           <h5 class="card-title pres-nombre-back">${valor(presidente.nombre)}</h5>
           <ul class="datos-lista">
-            <li><span class="dato-label">Nacimiento:</span> ${formatearFecha(presidente.nacimiento)}</li>
-            <li><span class="dato-label">Inicio mandato:</span> ${formatearFecha(presidente.inicioMandato)}</li>
-            <li><span class="dato-label">Fin mandato:</span> ${formatearFecha(presidente.finMandato)}</li>
+            <li><span class="dato-label">Inicio mandato:</span> ${formatearFecha(presidente.inicio)}</li>
+            <li><span class="dato-label">Fin mandato:</span> ${formatearFecha(presidente.fin)}</li>
             <li><span class="dato-label">Vicepresidente:</span> ${valor(presidente.vicepresidente)}</li>
             <li><span class="dato-label">Partido:</span> ${valor(presidente.partido)}</li>
+            <li><span class="dato-label">Período:</span> ${valor(presidente.periodoPresidencial)}</li>
           </ul>
         </div>
       </div>
@@ -104,3 +104,4 @@ async function init() {
 }
 
 document.addEventListener("DOMContentLoaded", init);
+
